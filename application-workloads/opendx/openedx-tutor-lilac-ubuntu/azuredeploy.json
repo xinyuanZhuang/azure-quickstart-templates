@@ -4,7 +4,6 @@
   "parameters": {
     "adminUsername": {
       "type": "string",
-      "defaultValue": "openadmin",
       "metadata": {
         "description": "Administrator username."
       }
