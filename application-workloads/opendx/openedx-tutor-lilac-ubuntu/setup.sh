@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "start"
+adminUsername=$1
 sudo apt update
 
 echo "install Docker"
@@ -18,7 +19,7 @@ yes Y | sudo chmod +x /usr/local/bin/docker-compose
 
 echo "Enable Docker without Sudo"
 #Enable Docker without Sudo (for user 'openadmin')
-sudo usermod -aG docker openadmin
+sudo usermod -aG docker $adminUsername
 
 yes Y | sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 yes Y | sudo chmod +x /usr/local/bin/docker-compose
